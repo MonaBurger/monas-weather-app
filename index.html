@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <header>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My weather app</title>
@@ -13,25 +13,35 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-  </head>
+  </header>
   <body>
     <div class="weather-app">
       <header>
-        <form>
-          <input type="search" placeholder="Enter a city..." />
-          <input type="submit" value="Search" />
+        <form class="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            class="search-form-input"
+          />
+          <input type="submit" value="Search" class="search-form-button" />
         </form>
       </header>
       <main>
-        <div>
-          <h1>Hamburg</h1>
-          <p>
-            Tuesday 18:27, scattered clouds
-            <br />
-            Humidity: 55%, Wind: 2.15km/h
-          </p>
+        <div class="weather-app-data">
+          <div>
+            <h1 class="city">Hamburg</h1>
+            <p class="details">
+              Tuesday 18:27, scattered clouds
+              <br />
+              Humidity: <strong>55%</strong>, Wind: <strong>2.15km/h</strong>
+            </p>
+          </div>
+          <div class="temperature">
+            <div class="icon">⛅</div>
+            <div class="current-temperature">6</div>
+            <div class="unit">°C</div>
+          </div>
         </div>
-        <div>⛅6°C</div>
       </main>
       <footer>
         This project was coded by
