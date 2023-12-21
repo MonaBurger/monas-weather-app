@@ -23,6 +23,7 @@
             type="search"
             placeholder="Enter a city..."
             class="search-form-input"
+            required
           />
           <input type="submit" value="Search" class="search-form-button" />
         </form>
@@ -30,16 +31,18 @@
       <main>
         <div class="weather-app-data">
           <div>
-            <h1 class="city">Hamburg</h1>
+            <h1 class="city"></h1>
             <p class="details">
-              Tuesday 18:27, scattered clouds
+              <span id="time"></span>,
+              <span id="description"></span>
               <br />
-              Humidity: <strong>55%</strong>, Wind: <strong>2.15km/h</strong>
+              Humidity: <strong id="humidity"></strong>, Wind:
+              <strong id="wind-speed"></strong>
             </p>
           </div>
           <div class="temperature">
             <div class="icon">⛅</div>
-            <div class="current-temperature">6</div>
+            <div class="current-temperature"></div>
             <div class="unit">°C</div>
           </div>
         </div>
