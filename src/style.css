@@ -73,8 +73,9 @@ main {
 }
 
 .icon {
-  font-size: 44px;
-  margin-top: 22px;
+  width: 88px;
+  height: 88px;
+  margin-top: 10px;
   margin-right: 10px;
 }
 
