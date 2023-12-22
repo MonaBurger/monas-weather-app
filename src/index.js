@@ -21,6 +21,7 @@ function refreshWeatherData(response) {
       src=${response.data.condition.icon_url}
       class="icon"
     />`;
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -55,6 +56,39 @@ function changeCity(event) {
 
   searchCity(cityInput.value);
 }
+
+function getForecast(city) {
+  let apiKey = "484c5880942e8bc04a5205c53o4et26f";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=$city&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+<div class="forecast-day">
+            <div class="forecast-date">${day}</div>
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+              width="42"
+            />
+            <div class="forecast-temperature">
+              <span class="forecast-max">15°</span>
+              <span class="forecast-min">12°</span>
+            </div>
+          </div>
+          `;
+  });
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
+let forecastElement = document.querySelector("#forecast");
 let searchFormElement = document.querySelector(".search-form");
 searchFormElement.addEventListener("submit", changeCity);
 

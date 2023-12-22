@@ -91,6 +91,8 @@ main {
 .weather-forecast {
   margin-top: 20;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .forecast-day {
